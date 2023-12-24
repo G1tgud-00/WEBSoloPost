@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'FORUMDJ.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+import dj_database_url
+
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+	'default': dj_database_url.parse(os.environ.get('postgres://test_db_wlh3_user:QQQUUCAhnNHxDYlSvipOujIshLEBhs8X@dpg-cm41g4ocmk4c73cgl5p0-a.singapore-postgres.render.com/test_db_wlh3'))
 }
 
 
